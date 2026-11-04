@@ -10,3 +10,11 @@ target/
 # Download these platform-specific / separately licensed dependencies locally.
 /lib/javafx-sdk-26.0.1/
 /lib/mysql-connector-j-*.jar
+
+# Keep locally added audio and lyrics out of public commits by default.
+/tracks/*
+!/tracks/.gitkeep
+/artist/track/*
+!/artist/track/.gitkeep
+/artist/lyrics/*
+!/artist/lyrics/.gitkeep

@@ -7,9 +7,9 @@ SoundAura is a Java command-line music library and player backed by MySQL or Mar
 - `src/soundaura/` — Java application source.
 - `database/database.sql` — database tables, triggers, three synthetic demo users, and the artist profile row required by the demo artist account. It contains no track, playlist, listening-history, or lyric rows.
 - `database/ER_Diagram.jpeg` — database relationship diagram.
-- `tracks/` — place audio files here when you have the rights to use them.
-- `artist/track/` — place audio files for artist uploads here.
-- `artist/lyrics/` — place lyrics text files for artist uploads here.
+- `tracks/` — local audio files referenced by track records. Files in this directory are ignored by Git by default.
+- `artist/track/` — local audio files for artist uploads; contents are ignored by Git by default.
+- `artist/lyrics/` — local lyrics text files for artist uploads; contents are ignored by Git by default.
 - `graphic_text/` — text art used by the terminal screens.
 - `lib/` — local dependencies downloaded separately; they are excluded from the repository.
 
@@ -52,16 +52,16 @@ The JavaFX SDK and MySQL Connector/J binaries are not stored in this repository.
 
 ## Third-party software
 
-The MIT license in this repository applies to the original SoundAura code and documentation only. Bundled third-party software keeps its own license terms; the MIT license does not relicense those files.
+The MIT license in this repository applies to the original SoundAura code and documentation only. Third-party software keeps its own license terms; the MIT license does not relicense those files.
 
 - OpenJFX 26.0.1 uses the GPLv2 with the Classpath Exception for applicable JavaFX code and includes separate third-party components. Keep the license, exception, and third-party notice files supplied in the JavaFX SDK when using or redistributing that SDK.
 - MySQL Connector/J 8.1.0 is licensed under GPLv2 with Oracle's Universal FOSS Exception 1.0. Its `LICENSE` notice is inside the downloaded JAR. The exception addresses use with other free/open-source software under its stated conditions; it does not change the JAR's license to MIT. This repository does not distribute the JAR; obtain it separately from the official MySQL download page.
 
-The audio and lyrics directories are intentionally empty. No music license is included or implied by the SoundAura code license.
+The media directories contain placeholders only and no songs or lyrics. No music license is included or implied by the SoundAura code license. Their contents are ignored by Git by default to reduce the chance of accidentally publishing files you do not have rights to redistribute. If you have rights to share a particular file publicly, you can deliberately force-add it.
 
 ## Add your own media
 
-The application expects track file names in the database to refer to files under `tracks/`. Artist upload asks for an MP3 file from `artist/track/` and optionally reads a text file from `artist/lyrics/`. Add only media you are authorized to use. The repository does not provide songs or lyrics; users must add suitable files and the corresponding track information to their own local database.
+The application expects track file names in the database to refer to files under `tracks/`. Artist upload asks for an MP3 file from `artist/track/` and optionally reads a text file from `artist/lyrics/`. Add only media you are authorized to use. The repository does not provide songs or lyrics; users must add suitable files and the corresponding track information to their own local database. Media files are ignored by Git by default, so they stay local unless you deliberately force-add files you are licensed to redistribute.
 
 ## Build and run
 
