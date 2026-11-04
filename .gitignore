@@ -1,0 +1,12 @@
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+
+# Java build output
+out/
+target/
+*.class
+
+# Download these platform-specific / separately licensed dependencies locally.
+/lib/javafx-sdk-26.0.1/
+/lib/mysql-connector-j-*.jar
